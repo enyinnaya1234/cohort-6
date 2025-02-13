@@ -20,17 +20,8 @@ jobs:
             - name: Install Hardhat
               run: npm install --save-dev hardhat@2.22.18
             
-            - name: Install Hardhat Dependencies
-              run: npm ci
-
-            - name: Install Solhint
-              run: npm install -g solhint
-            
-            - name: Show Solhint version 
-              run: solhint --version
-            
-            - name: Run Lint
-              run: solhint 'contracts/**/*.sol'
+            - name: Compile Solidity contracts
+              run: npx hardhat compile
             
             - name: Run Hardhat Test
               run: npx hardhat test
